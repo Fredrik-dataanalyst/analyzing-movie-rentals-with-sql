@@ -55,7 +55,7 @@ Next, I count how many rentals each customer has made by grouping the results us
 
 
 ## Query 5 – CTE: Rentals Lasting More Than Two Days
-This query uses a Common Table Expression (CTE) to identify rentals that lasted longer than two days. It calculates the rental period by subtracting the rental date from the return date using the julianday() function. However, in our sample dataset, no rentals exceeded a two-day duration, so the result is empty. This indicates that all returned rentals were completed within two days.
+This query uses a Common Table Expression (CTE) to identify rentals that lasted longer than two days. It calculates the rental period by subtracting the rental date from the return date using the julianday() function. However, in our sample dataset, no rentals exceeded a two-day duration, so the result is empty. This indicates that all returned rentals were completed within two days or that return-date was null.
 
 **Figure 9:** Query 5 code
 
