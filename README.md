@@ -5,15 +5,26 @@ This project demonstrates the use of SQL joins, aggregate functions, and common 
 In the first query, I use INNER JOINs to combine the rentals, customers, and movies tables. This allows me to display a complete record of who rented what and when. Since it’s an inner join, it only includes rows where there’s a match in all three tables—meaning the rental must be associated with a valid customer and movie. For example, the output shows that Alice rented Inception on January 1st, 2024.
 
 **Figure 1:** Query 1 code
+
 ![Screenshot 2025-05-24 at 17 36 18](https://github.com/user-attachments/assets/e30dbe8d-33af-47d1-ad79-38367c6faf9b)
 
+---
+
+**Figure 2:** Query 1 output
 
 ![Screenshot 2025-05-24 at 17 37 20](https://github.com/user-attachments/assets/01ff82a8-7465-4fed-bb92-93ab8f08b87f)
 
 ## Query 2 – LEFT JOIN: All Customers, Including Those Without Rentals
 In this query, I perform a LEFT JOIN between customers and rentals. This shows all customers, regardless of whether they’ve rented anything. If a customer hasn’t made any rentals, the rental fields will show NULL. Interestingly, the result shows that there are two different rows with the name Alice, but each with the same customer_id. Thus, the output of the query displays Alice's two different rentals, when she rented Inception on 1st of May and The Matrix on 3rd of May. 
 
+**Figure 3:** Screenshot of Query 2 code
+
 ![Screenshot 2025-05-24 at 17 39 12](https://github.com/user-attachments/assets/67ffa528-6fc4-416a-8f75-8f7cc37c28f1)
+
+---
+
+**Figure 4:** Query 2 output
+
 ![Screenshot 2025-05-24 at 17 40 09](https://github.com/user-attachments/assets/ff97f9e9-0c67-496f-b43c-20977bd5ad68)
 
 ## Query 3 – Simulated FULL OUTER JOIN
