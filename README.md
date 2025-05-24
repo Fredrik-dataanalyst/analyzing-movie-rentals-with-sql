@@ -1,4 +1,4 @@
-#📊 SQL Queries and Analysis
+# 📊 SQL Queries and Analysis
 This project demonstrates the use of SQL joins, aggregate functions, and common table expressions using a simple movie rental database. Below you'll find screenshots of each query, along with the results and a brief explanation of what each query does and what insights we can extract.
 
 ##Query 1 – INNER JOIN: Rentals with Customer and Movie Info
