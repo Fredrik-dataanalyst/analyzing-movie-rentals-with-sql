@@ -8,7 +8,7 @@ In the first query, I use INNER JOINs to combine the rentals, customers, and mov
 ![Screenshot 2025-05-24 at 17 37 20](https://github.com/user-attachments/assets/01ff82a8-7465-4fed-bb92-93ab8f08b87f)
 
 ## Query 2 – LEFT JOIN: All Customers, Including Those Without Rentals
-In this query, I perform a LEFT JOIN between customers and rentals. This shows all customers, regardless of whether they’ve rented anything. If a customer hasn’t made any rentals, the rental fields will show NULL. Interestingly, the result shows that there are two different customers named Alice, each with a different customer_id. One Alice has rental activity, while the other has none—something that wouldn’t be visible in an inner join.
+In this query, I perform a LEFT JOIN between customers and rentals. This shows all customers, regardless of whether they’ve rented anything. If a customer hasn’t made any rentals, the rental fields will show NULL. Interestingly, the result shows that there are two different rows with the name Alice, but each with the same customer_id. Thus, the output of the query displays Alice's two different rentals, when rented Inception on 1st of May and The Matrix on 3rd of May. 
 
 ![Screenshot 2025-05-24 at 17 39 12](https://github.com/user-attachments/assets/67ffa528-6fc4-416a-8f75-8f7cc37c28f1)
 ![Screenshot 2025-05-24 at 17 40 09](https://github.com/user-attachments/assets/ff97f9e9-0c67-496f-b43c-20977bd5ad68)
@@ -20,7 +20,7 @@ SQLite doesn’t support FULL OUTER JOIN directly, so I simulate it using a comb
 ![Screenshot 2025-05-24 at 17 57 17](https://github.com/user-attachments/assets/5b9b0bb6-6e75-42f7-9dd4-ae1506e260fa)
 
 ## Query 4 – GROUP BY: Count of Rentals per Customer
-Next, I count how many rentals each customer has made by grouping the results using GROUP BY. I join customers with rentals and then count the number of rentals for each customer name. One important note is that grouping by name, rather than customer_id, merges customers who share the same name. In this case, both Alices are treated as one, even though only one of them has rented movies. This shows the importance of grouping by unique IDs in real-world datasets.
+Next, I count how many rentals each customer has made by grouping the results using GROUP BY. I join customers with rentals and then count the number of rentals for each customer name. One important note is that grouping by name, rather than customer_id, merges customers who share the same name. In this case, Alice is treated as one, even though there could have been two. This shows the importance of grouping by unique IDs in real-world datasets, and not name.
 
 ![Screenshot 2025-05-24 at 18 02 19](https://github.com/user-attachments/assets/3018a113-a77a-4e87-9074-02bd669fac34)
 ![Screenshot 2025-05-24 at 18 03 56](https://github.com/user-attachments/assets/e64cac51-f93c-4ba4-a613-5f74378cf93b)
