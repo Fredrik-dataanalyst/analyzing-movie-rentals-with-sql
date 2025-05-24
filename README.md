@@ -4,11 +4,14 @@ This project demonstrates the use of SQL joins, aggregate functions, and common 
 ## Query 1 – INNER JOIN: Rentals with Customer and Movie Info
 In the first query, I use INNER JOINs to combine the rentals, customers, and movies tables. This allows me to display a complete record of who rented what and when. Since it’s an inner join, it only includes rows where there’s a match in all three tables—meaning the rental must be associated with a valid customer and movie. For example, the output shows that Alice rented Inception on January 1st, 2024.
 
+**Figure 1:** Query 1 code
 ![Screenshot 2025-05-24 at 17 36 18](https://github.com/user-attachments/assets/e30dbe8d-33af-47d1-ad79-38367c6faf9b)
+
+
 ![Screenshot 2025-05-24 at 17 37 20](https://github.com/user-attachments/assets/01ff82a8-7465-4fed-bb92-93ab8f08b87f)
 
 ## Query 2 – LEFT JOIN: All Customers, Including Those Without Rentals
-In this query, I perform a LEFT JOIN between customers and rentals. This shows all customers, regardless of whether they’ve rented anything. If a customer hasn’t made any rentals, the rental fields will show NULL. Interestingly, the result shows that there are two different rows with the name Alice, but each with the same customer_id. Thus, the output of the query displays Alice's two different rentals, when rented Inception on 1st of May and The Matrix on 3rd of May. 
+In this query, I perform a LEFT JOIN between customers and rentals. This shows all customers, regardless of whether they’ve rented anything. If a customer hasn’t made any rentals, the rental fields will show NULL. Interestingly, the result shows that there are two different rows with the name Alice, but each with the same customer_id. Thus, the output of the query displays Alice's two different rentals, when she rented Inception on 1st of May and The Matrix on 3rd of May. 
 
 ![Screenshot 2025-05-24 at 17 39 12](https://github.com/user-attachments/assets/67ffa528-6fc4-416a-8f75-8f7cc37c28f1)
 ![Screenshot 2025-05-24 at 17 40 09](https://github.com/user-attachments/assets/ff97f9e9-0c67-496f-b43c-20977bd5ad68)
@@ -28,7 +31,7 @@ Next, I count how many rentals each customer has made by grouping the results us
 
 
 ## Query 5 – CTE: Rentals Lasting More Than Two Days
-In the final query, I introduce a Common Table Expression (CTE) called late_rentals. It calculates the number of days each movie was rented by subtracting the rental_date from the return_date. I then filter this to show only rentals that lasted more than two days. The result shows a single record—rental #2 by Bob—indicating that he returned the movie after more than two days. CTEs are useful for breaking down complex logic and making queries more readable.
+This query uses a Common Table Expression (CTE) to identify rentals that lasted longer than two days. It calculates the rental period by subtracting the rental date from the return date using the julianday() function. However, in our sample dataset, no rentals exceeded a two-day duration, so the result is empty. This indicates that all returned rentals were completed within two days.
 
 ![Screenshot 2025-05-24 at 18 04 48](https://github.com/user-attachments/assets/3c2ba5d5-20ac-4b14-886b-c216ba78c02b)
 
